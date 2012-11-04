@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <title>Mark + Nathalie</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
+    <script>
+      (function() {
+        var activeSection = 'venue';
+        if (location.hash.match(/^#[a-z]+$/)) {
+          activeSection = location.hash.replace('#', '');
+        }
+        document.documentElement.className = "show-" + activeSection;
+      })();
+    </script>
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -87,8 +95,11 @@
         line-height: 1.75em;
       }
 
-      .main-content .menu a {
+      a {
         color: #673480;
+      }
+
+      .main-content .menu a {
         padding-right: 0.5em;
       }
 
@@ -104,6 +115,18 @@
       .main-content .menu .active a {
         background: right center no-repeat url(img/highlight.png);
         color: #fff;
+      }
+
+      .main-content .content {
+        display: none;
+      }
+
+      .show-venue #content-venue,
+      .show-ceremony #content-ceremony,
+      .show-travel #content-travel,
+      .show-registry #content-registry,
+      .show-faq #content-faq {
+        display: block;
       }
     </style>
 
@@ -161,18 +184,146 @@
 
       <div class="row-fluid main-content">
         <div class="span4 menu">
-          <h4><a href="#venue">Venue</a></h4>
-          <h4 class="active"><a href="#ceremony">Ceremony + Reception</a></h4>
-          <h4><a href="#travel">Travel + Accomodations</a></h4>
-          <h4><a href="#registry">Registry + Honeymoon</a></h4>
-          <h4><a href="#faq">FAQ</a></h4>
+          <h4 id="venue"><a href="#venue">Venue</a></h4>
+          <h4 id="ceremony" class="active"><a href="#ceremony">Ceremony + Reception</a></h4>
+          <h4 id="travel" ><a href="#travel">Travel + Accomodations</a></h4>
+          <h4 id="registry"><a href="#registry">Registry + Honeymoon</a></h4>
+          <h4 id="faq"><a href="#faq">FAQ</a></h4>
         </div>
 
         <div class="span8">
-          <h4>Venue</h4>
-          <p>On October 31, 2009, Mark and Nathalie met in Mountain View and drove to Alice’s Restaurant on Highway 35 for their first date. They split the bill.</p>
+          <div class="content" id="content-venue">
+            <h4>Venue</h4>
+            <p>On October 31, 2009, Mark and Nathalie met in Mountain View and drove to Alice’s Restaurant on Highway 35 for their first date. They split the bill.</p>
 
-<p>On October 12, 2013, they will be married across the street at Mountain Terrace. It is an indoor/outdoor location with a grassy lawn, redwood deck, and a rustic lodge.</p>
+            <p>On October 12, 2013, they will be married across the street at Mountain Terrace. It is an indoor/outdoor location with a grassy lawn, redwood deck, and a rustic lodge.</p>
+          </div>
+          <div class="content" id="content-ceremony">
+            <h4>Ceremony + Reception</h4>
+            <p>The ceremony and the reception will take place at the same venue, Mountain Terrace at Woodside. It is an indoor/outdoor location with a grassy lawn, redwood deck, and a rustic lodge.</p>
+
+            <p>Weather permitting, the ceremony will take place on the lawn. It will be non-religious, with family friend Jane Manning Hyatt officiating.<p>
+
+            <p>After the ceremony, there will be a short cocktail break with refreshments, and lawn games.</p>
+
+            <p>The reception will be a sit-down dinner on the deck with family toasts, cake-cutting, and dancing in the lodge to follow.</p>
+          </div>
+          <div class="content" id="content-travel">
+            <h4>Travel + Accomodations</h4>
+            <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;aq=&amp;sll=37.386709,-122.263959&amp;sspn=0.083678,0.074244&amp;ie=UTF8&amp;hq=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;ll=37.386708,-122.263959&amp;spn=0.017731,0.032015&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;aq=&amp;sll=37.386709,-122.263959&amp;sspn=0.083678,0.074244&amp;ie=UTF8&amp;hq=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;ll=37.386708,-122.263959&amp;spn=0.017731,0.032015&amp;t=m">View Larger Map</a></small>
+
+            <h5>From San Francisco</h5>
+            <p>Take Highway 280 South, exit Highway 84 - Woodside Road. Go right on Woodside Road. Follow Woodside Road through the town to the top of the mountain (approximately 10 km/6.5 miles). When you reach the intersection of Woodside Road and Skyline Boulevard (Highway 35), go right on to Skyline Boulevard. Take the first right into The Mountain Terrace parking lot.</p>
+
+            <h5>From Halifax</h5>
+            <p>Drive to Stanfield International Airport. Fly to San Francisco (approximately 6,138 km/3,814 miles). Follow directions for San Francisco, above.</p>
+
+            <h5>From San Jose</h5>
+            <p>Take Highway 280 North, exit Highway 84 - Woodside Road. Go left on Woodside Road. Follow Woodside Road through the town to the top of the mountain (approximately 10 km/6.5 miles). When you reach the intersection of Woodside Road and Skyline Boulevard (Highway 35), go right on to Skyline Boulevard. Take the first right into The Mountain Terrace parking lot.</p>
+
+            <h5>From Santa Cruz</h5>
+            <p>Take Highway 17 North toward San Jose/Oakland. Take Highway 85 North toward Mountain View. Merge onto Highway 280 North toward San Francisco. Exit Highway 84 - Woodside Road. Go left on Woodside Road. Follow Woodside Road through the town to the top of the mountain (approximately 10 km/6.5 miles). When you reach the intersection of Woodside Road and Skyline Boulevard (Highway 35), go right on to Skyline Boulevard. Take the first right into The Mountain Terrace parking lot.</p>
+
+
+          </div>
+          <div class="content" id="content-registry">
+            <h4>Registry + Honeymoon</h4>
+            <p>TODO.</p>
+          </div>
+          <div class="content" id="content-faq">
+            <h4>FAQ</h4>
+            <p>Mark and Nathalie have had a lot of questions about other peoples’ weddings that range from reasonable (“What is a lounge suit?”) to a little boneheaded (“Are there hats?”). It is therefore with great attention to the curious and confused out there that we overburden you with facts, suggestions, and tips about our wedding to ensure that you feel welcome, comfortable, and unstressed.</p>
+
+            <h5>How do I get to the venue(s)?</h5>
+            <p>Check out the <a href="#venue">Venue</a> page for directions from San Francisco, Halifax, San Jose, and Santa Cruz.</p>
+
+            <h5>What time should I arrive?</h5>
+            <p>TBD. Check your wedding invitation for details when it arrives.</p>
+
+            <h5>Where should I park?</h5>
+            <p>There is parking in front of the Mountain Terrace.</p>
+
+            <h5>Will I have to pay for parking?</h5>
+            <p>Nope.</p>
+
+            <h5>What should I wear?</h5>
+            <p>The recommended dress code is &ldquo;dressy cocktail.&rdquo; Dinner jackets, ties, and bowties are encouraged. A tux would be a step too far in one direction; jeans would be a step too far in the other direction. Dresses and skirts don’t need to be floor-length. Use your best judgment.</p>
+
+            <p>It is ABSOLUTELY ESSENTIAL that you dress for the weather, and in layers! October can be chilly in California, especially at a higher altitude. Please, please, please dress sensibly for a comfortable evening.</p>
+
+            <h5>What kind of shoes should/shouldn't I wear?</h5>
+            <p>The venue features a big grassy lawn, which you will almost certainly have to walk on. Fancy, spiky heels and suede boots are not good friends with nature.</p>
+
+            <h5>Are there any colors that guests should avoid wearing?</h5>
+            <p>The usual wedding tradition of saving white for the bride is a hopeful request. The wedding party will be dressed in purples and grays, although that doesn’t mean you should avoid these colors.</p>
+
+            <h5>Are kids welcome?</h5>
+            <p>Guests under 18 are admitted by invitation only. To ensure your kid has a good time, it is essential that you ask in advance. We can recommend some awesome babysitters.</p>
+
+            <h5>Can I bring a date?</h5>
+            <p>Unless your date is invited by name, no. Due to space limitations, we regret that will are having no +1s. Our wedding planner, Jessica, is authorized to exercise extreme discretion when enforcing this rule. Don’t mess with her!</p>
+
+            <h5>Does your wedding have a theme?</h5>
+            <p>Whimsicalifornia, and wisteria.</p>
+
+            <h5>I am coming from out of town. Where should I stay?</h5>
+            <p>Please check the Travel + Accommodations page.</p>
+
+            <h5>When is the RSVP deadline?</h5>
+            <p>TBD; check your invitation when it arrives.</p>
+
+            <h5>Are the ceremony and reception locations wheelchair accessible?</h5>
+            <p>Yes. You’ll have the best time if you let us know your needs in advance.</p>
+
+            <h5>What is a “non-religious” ceremony like?</h5>
+            <p>Neither Nathalie nor Mark are religious, or spiritual. The reception will therefore focus on the exchange of vows, and the signing of a marriage license (per Canadian tradition!).</p>
+
+            <h5>What should/could I do between the ceremony and the reception?</h5>
+            <p>Weather permitting, there will be passed appetizers and drinks on the lawn, as well as a variety of lawn games like croquet, bocce ball, and cornhole. Handstands and cartwheels are welcome!</p>
+
+            <h5>Will food be served?</h5>
+            <p>Oh yes.</p>
+
+            <h5>What kind of food will be served?</h5>
+            <p>Delicious food.</p>
+
+            <h5>Can you be more specific about the food?</h5>
+            <p>Yes.</p>
+
+            <h5>Sigh. <em>Will</em> you be more specific about the food?</h5>
+            <p>OK, yes. TODO: menu here.</p>
+
+            <h5>What if I have a dietary restriction?</h5>
+            <p>Please inform Nathalie and Mark of your dietary needs in advance to ensure we scout out the best and yummiest food for you. Vegans, vegetarians, and gluten-free folks will be in attendance, so don’t hesitate to drop us a line about what you want to eat. We are dedicated to ensuring your dietary needs are met, and then exceeded! :)</p>
+
+            <h5>Will there be dancing?</h5>
+            <p>Of course!</p>
+
+            <h5>Will there be any activities happening that I need to know about?</h5>
+            <p>Nope. </p>
+
+            <h5>What time will the reception end?</h5>
+            <p>The venue is booked until 9 pm. But, uh, yeah. Things happen. ;)</p>
+
+            <h5>Can I take pictures? </h5>
+            <p>Yes, but try to respect the photographer. Her name is Jillian, and she gets first pick of prime spots and photos during the ceremony and reception.</p>
+
+            <h5>Is there a gifts registry?</h5>
+            <p>TODO.</p>
+
+            <h5>What if I want to donate my services to the cause instead of give a gift?</h5>
+            <p>TODO.</p>
+
+            <h5>Is there transportation being provided between reception and hotels?</h5>
+            <p>TODO.</p>
+
+            <h5>Will last names be changing after the wedding?</h5>
+            <p>Yes. Nathalie will take Mark’s last name. Like a boss.</p>
+
+            <h5>I have a question not answered here; how do I contact you?</h5>
+            <p>You can email Mark (<a href="mailto:m@rkchristian.ca">m@rkchristian.ca</a>) or Nathalie (<a href="mailto:nathalie.arch@gmail.com">nathalie.arch@gmail.com</a>).
+            <p></p>
+          </div>
         </div>
       </div>
 
@@ -187,19 +338,35 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
+    <script>
+      (function() {
+
+        function addHandler(element, eventName, handler) {
+          if (element.addEventListener) {
+            element.addEventListener(eventName, handler, false);
+          }
+        }
+
+        function updateActiveSection() {
+          var activeSectionId = document.documentElement.className.replace(/^show-/, '');
+          var activeElements = document.getElementsByClassName('active');
+          for (var i = 0; i < activeElements.length; i++) {
+            activeElements[i].className = activeElements[i].className.replace(/\s*active\s*/, '');
+          }
+          document.getElementById(activeSectionId).className = 'active';
+        }
+
+        function hashChanged() {
+          document.documentElement.className = 'show-' + location.hash.replace('#', '');
+          updateActiveSection();
+        }
+
+        updateActiveSection();
+
+        addHandler(window, 'hashchange', hashChanged);
+
+      })();
+    </script>
 
   </body>
 </html>
