@@ -23,6 +23,13 @@
         padding-bottom: 40px;
       }
 
+      #countdown {
+        position: fixed;
+        padding: 1em;
+        top: 0;
+        right: 0;
+      }
+
       .footer {
         margin-top: 10px;
         text-align: center;
@@ -143,7 +150,6 @@
       }
 
       #anchors {
-        border:1px solid red;
         display: block;
         position: absolute;
         top: 0;
@@ -176,6 +182,36 @@
   </head>
 
   <body>
+    <div id="countdown"></div>
+    <script>
+      (function() {
+
+        var weddingDate = +new Date("October 12, 2013 4:00:00 PM PDT");
+
+        var now = +new Date();
+        var timeLeft = weddingDate - now;
+
+        if (timeLeft < 0) {
+          document.getElementById('countdown').innerHTML = "It's done, we're hitched! &#x2665;";
+        } else {
+          var secondsLeft = timeLeft / 1000;
+          var daysLeft = parseInt(secondsLeft / 86400);
+
+          if (daysLeft == 0) {
+            o = "Today!";
+          } else if (daysLeft == 1) {
+            o = "Tomorrow!";
+          } else {
+            o = "Only " + daysLeft + " days away!"
+          }
+
+          document.getElementById('countdown').innerHTML = o;
+        }
+
+
+      })();
+    </script>
+
     <div id="anchors">
       <a name="welcome"></a>
       <a name="party"></a>
