@@ -24,7 +24,7 @@
       }
 
       #countdown {
-        position: fixed;
+        position: absolute;
         padding: 1em;
         top: 0;
         right: 0;
@@ -81,10 +81,11 @@
 
       .jumbotron h1 {
         background: center center no-repeat url(img/title.png);
+        background-size: contain;
         height: 141px;
-        min-width: 700px;
         text-indent: -10000em;
         overflow: hidden;
+        margin-bottom: 0;
       }
 
       .heart {
@@ -173,6 +174,42 @@
         border: 0;
         border-radius: 0.5em;
       }
+
+      /*
+        Mobile optimizations
+      */
+      @media (max-width: 768px) {
+        .big-picture h4 {
+          font-size: 1.25em;
+          margin-bottom: 0;
+        }
+
+        .big-picture .big-date, .big-picture .big-place {
+          text-align: center;
+        }
+
+        .big-picture .big-place:before {
+          content: 'in';
+          font-style: italic;
+        }
+
+        .heart {
+          margin-left: -45px;
+          width: 89px;
+          height: 103px;
+        }
+
+        .jumbotron {
+          margin-top: 1em !important;
+          margin-bottom: 0 !important;
+        }
+
+        .big-picture {
+          margin-top: -3em !important;
+        }
+
+      }
+
     </style>
 
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -240,11 +277,10 @@
       <img class="heart" src="img/heart.png" alt="&#x2665;" height="205" width="178">
 
       <div class="row-fluid big-picture">
-        <div class="span6">
+        <div class="big-date span5">
           <h4>October 12, 2013</h4>
         </div>
-
-        <div class="span6 right">
+        <div class="big-place offset2 span5 right">
           <h4>Woodside, CA</h4>
         </div>
       </div>
@@ -252,8 +288,8 @@
       <div class="row-fluid main-content">
         <div class="span4 menu">
           <h4 id="welcome"><a href="#welcome">Welcome</a></h4>
+          <h4 id="venue"><a href="#venue">Venue + Directions</a></h4>
           <h4 id="party"><a href="#party">Wedding Party</a></h4>
-          <h4 id="venue"><a href="#venue">Venue</a></h4>
           <h4 id="ceremony" class="active"><a href="#ceremony">Ceremony + Reception</a></h4>
           <h4 id="accommodations" ><a href="#accommodations">Accommodations</a></h4>
           <h4 id="registry"><a href="#registry">Registry + Honeymoon</a></h4>
@@ -307,6 +343,8 @@
             <h4>Venue</h4>
             <p>The Mountain Terrace is an indoor/outdoor location with a grassy lawn, redwood deck, and a rustic lodge.</p>
 
+            <p>We're setting up a shuttle to make your trip to the venue a bit easier; details will be here soon. Read on if you'd like directions to drive there yourself.</p>
+
             <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;aq=&amp;sll=37.391708,-122.263959&amp;sspn=0.083678,0.074244&amp;ie=UTF8&amp;hq=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;ll=37.391708,-122.263959&amp;spn=0.017731,0.032015&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;aq=&amp;sll=37.386709,-122.263959&amp;sspn=0.083678,0.074244&amp;ie=UTF8&amp;hq=Mountain+Terrace,+Skyline+Boulevard,+Woodside,+CA&amp;ll=37.386708,-122.263959&amp;spn=0.017731,0.032015&amp;t=m">View Larger Map</a></small>
 
             <h5>From San Francisco</h5>
@@ -336,27 +374,21 @@
             <h4>Accommodations</h4>
 <p>Where you will want to stay depends entirely on what you will want to do while you're here (besides attend our wedding), how long you're planning on staying, how much you want to pay&hellip;and whether you prefer convenience, comfort, or a place where you can host a whole cohort.</p>
 
-<p>The All-around Great Option award goes to <a href="https://airbnb.com">Airbnb</a>, offering vacation rentals, private rooms, and whole houses for rental by owner.</p>
+<h5>The official hotel</h5>
+<p>If you're just in town for the wedding, we've secured a block of hotel rooms for Friday (October 11) and Saturday night (October 12) at the Hilton in San Mateo. Our group rate is $105/night for a single king-sized bed and $125/night for two double beds. To reserve a room, call <a href="tel://18777829444">1-877-STAY-HGI</a> and <strong>ask for the group rate for Ms. Nathalie Arch</strong>.
+
+<h5>Staying longer?</h5>
+<p>The <em>All-around Great Option Award</em> goes to <a href="https://airbnb.com">Airbnb</a>, offering vacation rentals, private rooms, and whole houses for rental by owner.</p>
 
 <p>You can also use <a href="https://www.google.com/hotelfinder/">Google Hotel Finder</a> to list hotels by city, price range, and date range.</p>
 
-<p>There are no standard-fare lodgings in Woodside. You will have to stay in one of the surrounding towns.</p>
-
-<p>Consider staying in&hellip;</p>
-<ul>
-  <li>"Reasonably-priced" Redwood City</li>
-  <li>"Safe Bet" San Carlos</li>
-  <li>"Barely Anything to Do" Belmont</li>
-  <li>"Satisfactory" San Mateo (we live in San Mateo)</li>
-</ul>
-
-<p>And then there's Burlingame&hellip;and really, at that rate, you may as well stay in San Francisco.</p>
-
-<p>When booking your trip, you may want to consider the following:</p>
+<p>There are no standard-fare lodgings in Woodside. You will have to stay in one of the surrounding towns &mdash; we suggest staying in San Mateo (where we live) if possible.</p>
 
 <p><a href="https://maps.google.com/maps/ms?msid=208877403558933266515.0004d465a911c8bb918cc&msa=0&ll=37.625109,-122.295685&spn=1.341083,1.18515">Here's a little map</a> to give you an idea of where everything is, relative to our wedding.</p>
 
 <div id="map-container"><a href="https://maps.google.com/maps/ms?msid=208877403558933266515.0004d465a911c8bb918cc&msa=0&ll=37.625109,-122.295685&spn=1.341083,1.18515"><img src="img/map.png" id="map" height="400" width="366"></a></div>
+
+<p>When booking your trip, you may want to consider the following:</p>
 
 <ul>
 <li>The wedding venue is not accessible by public transit or even the most avid hiker. While we are investigating shuttles and other options, we highly recommend you plan to rent a car while you're here. (Fun options for renting a car for short or long stays include <a href="http://zipcar.com">Zipcar</a>, and there are the usual places like <a href="http://hertz.com">Hertz</a>.)</li>
@@ -374,10 +406,13 @@
             <p>Mark and Nathalie have had a lot of questions about other peoples’ weddings that range from reasonable (&ldquo;What is a lounge suit?&rdquo;) to a little boneheaded (&ldquo;Are there hats?&rdquo;). It is therefore with great attention to the curious and confused out there that we overburden you with facts, suggestions, and tips about our wedding to ensure that you feel welcome, comfortable, and unstressed.</p>
 
             <h5>How do I get to the venue(s)?</h5>
-            <p>Check out the <a href="#venue">Venue</a> page for directions from San Francisco, Halifax, San Jose, and Santa Cruz.</p>
+            <p>Check out the <a href="#venue">Venue + Directions</a> page for directions from San Francisco, Halifax, San Jose, and Santa Cruz.</p>
+
+            <h5>Is there a shuttle to take me there?</h5
+            <p>Yes; we're still finalizing this part. Stay tuned for details.</p>
 
             <h5>What time should I arrive?</h5>
-            <p>TBD. Check your wedding invitation for details when it arrives.</p>
+            <p>The ceremony begins at 4:30 PM. Please plan to be seated by that point.</p>
 
             <h5>Where should I park?</h5>
             <p>There is parking in front of the Mountain Terrace.</p>
@@ -388,10 +423,10 @@
             <h5>What should I wear?</h5>
             <p>The recommended dress code is &ldquo;dressy cocktail.&rdquo; Dinner jackets, ties, and bowties are encouraged. A tux would be a step too far in one direction; jeans would be a step too far in the other direction. Dresses and skirts don’t need to be floor-length.</p>
 
-            <p>It is ABSOLUTELY ESSENTIAL that you dress for the weather, and in layers! October can be chilly in California, especially at a higher altitude. Please, please, please dress sensibly for a comfortable evening.</p>
+            <p>It is <strong>ABSOLUTELY ESSENTIAL</strong> that you dress for the weather, and in layers! The ceremony is set to take place in an open area with no shade. October can be unpredictable in California, especially at a higher altitude. It may be sunny and warm (so you should bring sunscreen), but it also may end up being chilly (so you should wear layers). Please, please, please dress sensibly for a comfortable evening.</p>
 
             <h5>What kind of shoes should/shouldn't I wear?</h5>
-            <p>Dancing shoes! The venue features a big grassy lawn, which you will almost certainly have to walk on. Fancy, spiky heels and suede boots are not good friends with nature.</p>
+            <p>The venue features a big grassy lawn, which you will almost certainly have to walk on. Fancy, spiky heels and suede boots are not good friends with nature.</p>
 
             <h5>Are there any colo(u)rs that guests should avoid wearing?</h5>
             <p>The wedding party will be dressed in purples and greys/grays, although that doesn’t mean you should avoid these colo(u)rs.</p>
@@ -406,7 +441,7 @@
             <p>Whimsicalifornia, and wisteria.</p>
 
             <h5>I am coming from out of town. Where should I stay?</h5>
-            <p>Please check the <a href="#accommodations">Accommodations</a> page.</p>
+            <p>Please see the <a href="#accommodations">Accommodations</a> page.</p>
 
             <h5>When is the RSVP deadline?</h5>
             <p>TBD; check your invitation when it arrives.</p>
@@ -421,16 +456,7 @@
             <p>Weather permitting, there will be passed appetizers and drinks on the lawn, as well as a variety of lawn games like croquet, bocce ball, and cornhole. Handstands and cartwheels are welcome!</p>
 
             <h5>Will food be served?</h5>
-            <p>Oh yes.</p>
-
-            <h5>What kind of food will be served?</h5>
-            <p>Delicious food.</p>
-
-            <h5>Can you be more specific about the food?</h5>
-            <p>Yes.</p>
-
-            <h5>Sigh. <em>Will</em> you be more specific about the food?</h5>
-            <p>OK, yes. However, we haven't actually selected the full menu yet. Stay tuned &mdash; this should be done in early 2013.</p>
+            <p>Yes, but we haven't finalized our menu yet. We plan on serving fish, chicken, and vegetarian options.</p>
 
             <h5>What if I have a dietary restriction?</h5>
             <p>Please inform Nathalie and Mark of your dietary needs in advance to ensure we scout out the best and yummiest food for you. Vegans, vegetarians, and gluten-free folks will be in attendance, so don’t hesitate to drop us a line about what you want to eat. We are dedicated to ensuring your dietary needs are met, and then exceeded! :)</p>
@@ -442,16 +468,13 @@
             <p>Nope. </p>
 
             <h5>What time will the reception end?</h5>
-            <p>The venue is booked until 9 pm. But, uh, yeah. Things happen. ;)</p>
+            <p>The venue is booked until 11 pm, but we might go into overtime.</p>
 
             <h5>Is there a gifts registry?</h5>
             <p>Yessum; please see the <a href="#registry">Registry + Honeymoon</a> page.</p>
 
-            <h5>Is there transportation being provided between reception and hotels?</h5>
-            <p>Maybe. We're still figuring this out.</p><!-- TODO: figure this out -->
-
             <h5>Will last names be changing after the wedding?</h5>
-            <p>Yes. Nathalie will take Mark’s last name, like a boss.</p>
+            <p>Yes. Nathalie will take Mark’s last name.</p>
 
             <h5>Does your wedding have a hashtag?</h5>
             <p>Of course &mdash; <a href="https://twitter.com/search/realtime?q=%23markalie">#markalie</a>.
