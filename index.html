@@ -504,6 +504,8 @@
         function addHandler(element, eventName, handler) {
           if (element.addEventListener) {
             element.addEventListener(eventName, handler, false);
+          } else {
+            element.attachEvent('on' + eventName, handler);
           }
         }
 
@@ -518,9 +520,6 @@
         }
 
         function hashChanged() {
-          if (!document.hasOwnProperty('getElementsByClassName')) {
-            window.location.reload(true);
-          }
           document.documentElement.className = 'show-' + location.hash.replace('#', '');
           updateActiveSection();
         }
