@@ -507,26 +507,20 @@
           }
         }
 
-        function dbg(message) {
-          console && console.log && console.log(message)
-        }
-
         function updateActiveSection() {
-          dbg("updateActiveSection");
           window.scrollTo(0, 0);
-          dbg("did scroll");
           var activeSectionId = document.documentElement.className.replace(/^show-/, '');
           var activeElements = document.querySelectorAll('.active');
-          dbg("element count = " + activeElements.length);
           for (var i = 0; i < activeElements.length; i++) {
             activeElements[i].className = activeElements[i].className.replace(/\s*active\s*/, '');
           }
-          dbg("done making inactive");
           document.getElementById(activeSectionId).className = 'active';
-          dbg("done making active");
         }
 
         function hashChanged() {
+          if (!document.hasOwnProperty('getElementsByClassName')) {
+            window.reload();
+          }
           document.documentElement.className = 'show-' + location.hash.replace('#', '');
           updateActiveSection();
         }
