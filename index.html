@@ -510,7 +510,7 @@
         function updateActiveSection() {
           window.scrollTo(0, 0);
           var activeSectionId = document.documentElement.className.replace(/^show-/, '');
-          var activeElements = document.getElementsByClassName('active');
+          var activeElements = document.querySelectorAll('.active');
           for (var i = 0; i < activeElements.length; i++) {
             activeElements[i].className = activeElements[i].className.replace(/\s*active\s*/, '');
           }
