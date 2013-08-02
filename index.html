@@ -519,7 +519,7 @@
 
         function hashChanged() {
           if (!document.hasOwnProperty('getElementsByClassName')) {
-            window.reload();
+            window.location.reload(true);
           }
           document.documentElement.className = 'show-' + location.hash.replace('#', '');
           updateActiveSection();
